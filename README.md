@@ -36,13 +36,27 @@ This produces the following output:
 
 ## Configuration
 
-Hexdump allows you to configure the length of each row (number of bytes displayed).  Additionally, the ASCII text display can be disabled.  To configure these features, use the `CustomHexdump` class template.  The class accepts two template arguments, the first being the length of the row, and the second being a boolean indicating whether or not the ASCII text should be displayed.
+Hexdump allows you to configure the length of each row (number of
+bytes displayed).  Additionally, the ASCII text display can be
+disabled.  To configure these features, use either one of the
+`CustomHexdump` or `CustomHexdumpBase` class templates.
+
+The `CustomHexdump`class accepts two template arguments, the first
+being the length of the row, and the second being a boolean indicating
+whether or not the ASCII text should be displayed.
+
+The `CustomHexdumpBase`class accepts three template arguments, the first
+being the `type` of the second argument. The second and third
+arguments map to the first and second arguments of `CustomHexdump`.
 
 For example:
 
 ```cpp
-// row length of 8, with ASCII
+// using CustomHexdump, with row length of 8, with ASCII
 std::cout << CustomHexdump<8, true>(data, sizeof(data)) << std::endl;
+
+// or using CustomHexdumpBase, with type uint8_t, row length of 8, with ASCII:
+std::cout << CustomHexdumpBase<uint16_t, 8, true>(data, sizeof(data)) << std::endl;
 ```
 
 Produces:
