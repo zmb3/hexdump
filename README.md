@@ -1,4 +1,4 @@
-hexdump
+hexdump ![](https://travis-ci.org/Silver112358/hexdump.svg?branch=add%2Fci) 
 =======
 
 hexdump is a simple wrapper that allows you to display the contents of memory using C++ streams.  The output is formatted similar to the Linux tool of the same name.
