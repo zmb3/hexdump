@@ -6,9 +6,9 @@ int main()
 {
     unsigned char data[150];
     unsigned char c = 0;
-    for (auto& val : data)
+    for (int i=0;i<sizeof(data);i++)
     {
-        val = c++;
+        data[i] = c++;
     }
 
     std::cout << Hexdump(data, sizeof(data)) << std::endl;

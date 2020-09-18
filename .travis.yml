@@ -1,0 +1,3 @@
+os: windows
+language: cpp
+script: true
